@@ -16,11 +16,14 @@ open class MvRxEpoxyController(
     val buildModelsCallback: EpoxyController.() -> Unit = {}
 ) : AsyncEpoxyController() {
 
+    // This gets called every time the controller is updated
     override fun buildModels() {
         buildModelsCallback()
     }
 }
 
+// Below are extension functions for convenient use with BaseFragment.
+// These extension functions use function literals with receiver.
 
 /**
  * Create a [MvRxEpoxyController] that builds models with the given callback.
